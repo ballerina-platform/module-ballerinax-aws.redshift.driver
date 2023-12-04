@@ -1,0 +1,18 @@
+[package]
+distribution = "2201.8.0"
+org = "ballerinax"
+name = "aws.redshift.driver"
+version = "0.1.0"
+license = ["Apache-2.0"]
+authors = ["Ballerina"]
+keywords = ["Data Warehouse", "Cost/Paid", "Columnar Storage"]
+icon = "icon.png"
+repository = "https://github.com/ballerina-platform/module-ballerinax-aws.redshift.driver"
+
+[platform.java11]
+graalvmCompatible = true
+
+[[platform.java11.dependency]]
+groupId = "com.amazon.redshift"
+artifactId = "redshift-jdbc42"
+version = "2.1.0.23"
