@@ -9,9 +9,6 @@ keywords = ["Data Warehouse", "Cost/Paid", "Columnar Storage"]
 icon = "icon.png"
 repository = "https://github.com/ballerina-platform/module-ballerinax-aws.redshift.driver"
 
-[platform.java11]
-graalvmCompatible = true
-
 [[platform.java11.dependency]]
 groupId = "com.amazon.redshift"
 artifactId = "redshift-jdbc42"
