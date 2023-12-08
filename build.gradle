@@ -33,7 +33,6 @@ allprojects {
     group = project.group
     version = project.version
 
-    apply plugin: 'jacoco'
     apply plugin: 'maven-publish'
 
     repositories {
