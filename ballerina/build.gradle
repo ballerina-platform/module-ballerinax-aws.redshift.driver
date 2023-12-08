@@ -18,27 +18,15 @@
 
 import org.apache.tools.ant.taskdefs.condition.Os
 
-buildscript {
-    repositories {
-        maven {
-            url = 'https://maven.pkg.github.com/ballerina-platform/plugin-gradle'
-            credentials {
-                username System.getenv("packageUser")
-                password System.getenv("packagePAT")
-            }
-        }
-    }
-    dependencies {
-        classpath "io.ballerina:plugin-gradle:${project.ballerinaGradlePluginVersion}"
-    }
+plugins {
+    id 'io.ballerina.plugin'
 }
 
-description = 'Ballerina - AWS Redshift driver Ballerina Generator'
+description = 'AWS Redshift - Ballerina'
 
-def packageName = 'aws.redshift.driver'
-def packageOrg = 'ballerinax'
+def packageName = "aws.redshift.driver"
+def packageOrg = "ballerinax"
 def tomlVersion = stripBallerinaExtensionVersion("${project.version}")
-
 def ballerinaTomlFilePlaceHolder = new File("${project.rootDir}/build-config/resources/Ballerina.toml")
 def ballerinaTomlFile = new File("$project.projectDir/Ballerina.toml")
 
@@ -52,16 +40,8 @@ def stripBallerinaExtensionVersion(String extVersion) {
             return extVersion
         }
     } else {
-        return extVersion.replace("${project.ext.snapshotVersion}", '')
+        return extVersion.replace("${project.ext.snapshotVersion}", "")
     }
-}
-
-apply plugin: 'io.ballerina.plugin'
-
-ballerina {
-    packageOrganization = packageOrg
-    module = packageName
-    langVersion = ballerinaLangVersion
 }
 
 configurations {
@@ -69,9 +49,17 @@ configurations {
 }
 
 dependencies {
-    externalJars (group: 'com.amazon.redshift', name: 'redshift-jdbc42', version: "${redshiftDriverVersion}") {
+    externalJars(group: 'com.amazon.redshift', name: 'redshift-jdbc42', version: "${redshiftDriverVersion}") {
         transitive = false
     }
+}
+
+ballerina {
+    packageOrganization = packageOrg
+    module = packageName
+    testCoverageParam = "--code-coverage --coverage-format=xml --excludes=\"modules/oas/**\""
+    isConnector = true
+    platform = "any"
 }
 
 task updateTomlFiles {
@@ -95,23 +83,9 @@ task commitTomlFiles {
     }
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            artifact source: createArtifactZip, extension: 'zip'
-        }
-    }
-    repositories {
-        maven {
-            name = 'GitHubPackages'
-            url = uri("https://maven.pkg.github.com/ballerina-platform/module-${packageOrg}-${packageName}")
-            credentials {
-                username = System.getenv('publishUser')
-                password = System.getenv('publishPAT')
-            }
-        }
-    }
+clean {
+    delete 'build'
 }
 
-build.dependsOn "unpackJballerinaTools"
-build.dependsOn "generatePomFileForMavenPublication"
+publishToMavenLocal.dependsOn build
+publish.dependsOn build
