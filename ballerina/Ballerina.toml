@@ -5,7 +5,7 @@ name = "aws.redshift.driver"
 version = "0.1.0"
 license = ["Apache-2.0"]
 authors = ["Ballerina"]
-keywords = ["Data Warehouse", "Cost/Paid", "Columnar Storage", "driver", "vendor/aws"]
+keywords = ["Data Warehouse", "Cost/Paid", "Columnar Storage"]
 icon = "icon.png"
 repository = "https://github.com/ballerina-platform/module-ballerinax-aws.redshift.driver"
 
