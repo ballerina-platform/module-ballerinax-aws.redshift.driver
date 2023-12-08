@@ -1,7 +1,6 @@
 # Ballerina AWS Redshift Driver Library
 
-The AWS Redshift Driver library is one of the external library packages of the
-<a target="_blank" href="https://ballerina.io/">Ballerina</a> language.
+The AWS Redshift Driver library is one of the library packages of the <a target="_blank" href="https://ballerina.io/">Ballerina</a> language.
 
 This Package bundles the latest AWS Redshift drivers so that the AWS Redshift connector can be used in ballerina projects easily.
 
