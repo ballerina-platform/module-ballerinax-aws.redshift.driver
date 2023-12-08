@@ -57,9 +57,9 @@ dependencies {
 ballerina {
     packageOrganization = packageOrg
     module = packageName
-    testCoverageParam = "--code-coverage --coverage-format=xml --excludes=\"modules/oas/**\""
+    testCoverageParam = "--code-coverage --coverage-format=xml"
     isConnector = true
-    platform = "any"
+    platform = "java17"
 }
 
 task updateTomlFiles {
