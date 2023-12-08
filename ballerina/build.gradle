@@ -87,5 +87,6 @@ clean {
     delete 'build'
 }
 
+build.dependsOn copyToLib
 publishToMavenLocal.dependsOn build
 publish.dependsOn build
