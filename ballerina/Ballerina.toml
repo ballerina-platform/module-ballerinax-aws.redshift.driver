@@ -10,4 +10,7 @@ icon = "icon.png"
 repository = "https://github.com/ballerina-platform/module-ballerinax-aws.redshift.driver"
 
 [[platform.java11.dependency]]
+groupId = "com.amazon.redshift"
+artifactId = "redshift-jdbc42"
+version = "2.1.0.23"
 path = "./lib/redshift-jdbc42-2.1.0.23.jar"
