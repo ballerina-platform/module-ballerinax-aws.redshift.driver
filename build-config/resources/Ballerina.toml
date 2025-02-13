@@ -1,5 +1,5 @@
 [package]
-distribution = "2201.8.0"
+distribution = "2201.11.0"
 org = "ballerinax"
 name = "aws.redshift.driver"
 version = "@toml.version@"
@@ -9,7 +9,7 @@ keywords = ["Data Warehouse", "Cost/Paid", "Columnar Storage", "driver", "vendor
 icon = "icon.png"
 repository = "https://github.com/ballerina-platform/module-ballerinax-aws.redshift.driver"
 
-[[platform.java11.dependency]]
+[[platform.java21.dependency]]
 groupId = "com.amazon.redshift"
 artifactId = "redshift-jdbc42"
 version = "@aws.redshift.driver.version@"
