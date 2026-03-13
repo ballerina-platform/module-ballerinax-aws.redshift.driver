@@ -11,10 +11,6 @@ The AWS Redshift driver provides a reliable and high-performance connectivity to
 - Secure communication with TLS and authentication
 - GraalVM compatible for native image builds
 
-## Package overview
-
-This Package bundles the latest AWS Redshift drivers so that the AWS Redshift connector can be used in ballerina projects easily.
-
 ## Compatibility
 
 | |   Version    |
