@@ -2,7 +2,7 @@
 distribution = "2201.11.0"
 org = "ballerinax"
 name = "aws.redshift.driver"
-version = "1.1.1"
+version = "1.1.2"
 license = ["Apache-2.0"]
 authors = ["Ballerina"]
 keywords = ["Data Warehouse", "Cost/Paid", "Columnar Storage", "Vendor/Amazon", "Area/Database", "Type/Driver"]
