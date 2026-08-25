@@ -15,7 +15,6 @@ The AWS Redshift driver provides a reliable and high-performance connectivity to
 
 | |   Version    |
 |:---|:------------:|
-|Ballerina Language | **2201.8.0** |
 |Ballerina Language | **2201.11.0** |
 |AWS Redshift Driver | **2.1.0.32** |
 
