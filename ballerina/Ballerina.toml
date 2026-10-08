@@ -12,5 +12,5 @@ repository = "https://github.com/ballerina-platform/module-ballerinax-aws.redshi
 [[platform.java21.dependency]]
 groupId = "com.amazon.redshift"
 artifactId = "redshift-jdbc42"
-version = "2.1.0.32"
-path = "./lib/redshift-jdbc42-2.1.0.32.jar"
+version = "2.2.9"
+path = "./lib/redshift-jdbc42-2.2.9.jar"
